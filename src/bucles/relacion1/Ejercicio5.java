@@ -1,4 +1,4 @@
-package bucles;
+package bucles.relacion1;
 
 import java.util.Scanner;
 
@@ -15,39 +15,21 @@ public class Ejercicio5 {
 
         char palo = sc.nextLine().toUpperCase().charAt(0);
 
-        switch (num) {
-            case 1:
-                numCarta = "AS";
-                break;
-            case 10:
-                numCarta = "SOTA";
-                break;
-            case 11:
-                numCarta = "CABALLO";
-                break;
-            case 12:
-                numCarta = "REY";
-                break;
-            default:
-                numCarta = String.valueOf(num);
-        }
+        numCarta = switch (num) {
+            case 1 -> "AS";
+            case 10 -> "SOTA";
+            case 11 -> "CABALLO";
+            case 12 -> "REY";
+            default -> String.valueOf(num);
+        };
 
-        switch (palo) {
-            case 'C':
-                paloCarta = "COPAS";
-                break;
-            case 'E':
-                paloCarta = "ESPADAS";
-                break;
-            case 'O':
-                paloCarta = "OROS";
-                break;
-            case 'B':
-                paloCarta = "BASTOS";
-                break;
-            default:
-                paloCarta = "";
-        }
+        paloCarta = switch (palo) {
+            case 'C' -> "COPAS";
+            case 'E' -> "ESPADAS";
+            case 'O' -> "OROS";
+            case 'B' -> "BASTOS";
+            default -> "";
+        };
 
         // numFilas lo he inicializado arriba, es lo mismo que poner 9
         for (int filas = 0; filas < numFilas; filas++) {

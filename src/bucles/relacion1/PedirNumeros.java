@@ -1,4 +1,4 @@
-package bucles;
+package bucles.relacion1;
 
 import java.util.Scanner;
 
